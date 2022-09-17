@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="Footer">
                 <div className = "FooterContent">
                     <div className = "Contact">
-                        <p className = "Title">Vous avez des questions?</p>
+                        <p className = "Title">Avez-vous des questions?</p>
                         <p>Avenue Hassan II, Rabat</p>
                         <p>+212 664 09 38 60</p>
                         <p>example@email.com</p>
