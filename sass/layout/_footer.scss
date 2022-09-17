@@ -1,0 +1,87 @@
+.Footer {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    .FooterContent {
+        width: 100%;
+        height: auto;
+        background-color: #F2F2F2;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 50px 10vw;
+        flex-wrap: wrap;
+        color: #555;
+        >* {
+            // flex: 1;
+            height: 100%;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+        .Contact {
+            display: block;
+            p {
+                font-weight: 300;
+                font-size: 16px;
+            }
+            .Title {
+                font-weight: bold;
+                font-size: clamp(18px, 1.1vw, 25px);
+                margin-bottom: 20px;
+            }
+            * {
+                height: min-content;
+            }
+        }
+        .Links {
+            display: block;
+            p {
+                font-weight: 300;
+                font-size: 16px;
+            }
+            .Title {
+                font-weight: bold;
+                font-size: clamp(18px, 1.1vw, 25px);
+                margin-bottom: 20px;
+            }
+            * {
+                height: min-content;
+            }
+        }
+        .Social {
+            display: block;
+            .Title {
+                font-weight: bold;
+                font-size: clamp(18px, 1.1vw, 25px);
+                margin-bottom: 20px;
+            }
+            .SocialIcons {
+                display: block;
+                >* {
+                    margin-right: 20px;
+                    font-size: 16px;
+                }
+            }
+            * {
+                height: min-content;
+            }
+        }
+    }
+    .FooterInfo {
+        width: 100%;
+        height: auto;
+        padding: 50px 50px;
+        background-color: $blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        font-size: clamp(16px, 1vw, 25px);
+    }
+}

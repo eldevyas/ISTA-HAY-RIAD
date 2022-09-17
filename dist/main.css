@@ -1,0 +1,289 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+  /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #29abe1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #FCFCFC;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+body .NavBar {
+  width: 100%;
+  height: 100%;
+}
+body .NavBar .UpperBar {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px 30px;
+  height: 70px;
+}
+body .NavBar .UpperBar .desktop-header-logo {
+  position: relative;
+}
+body .NavBar .UpperBar h1 {
+  text-align: center;
+  font-weight: 900;
+  color: #29abe1;
+  font-size: clamp(25px, 1.5vw, 35px);
+}
+body .NavBar .UpperBar * {
+  flex: 1;
+}
+@media (max-width: 768px) {
+  body .NavBar .UpperBar {
+    padding: 10px 0px;
+  }
+  body .NavBar .UpperBar div:last-child {
+    display: none;
+  }
+  body .NavBar .UpperBar h1 {
+    font-size: 20px;
+  }
+}
+body .NavBar .BottomBar {
+  position: relative;
+  height: auto;
+  background: #29abe1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body .NavBar .BottomBar .ButtonGroup {
+  position: relative;
+  height: auto;
+  background: #29abe1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .NavBar .BottomBar .ButtonGroup .ButtonGrouped {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  border-color: #fff;
+  font-family: inherit;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  White-space: nowrap;
+  border-radius: 0px;
+}
+body .NavBar .BottomBarMenu {
+  width: 100%;
+  height: auto;
+  background: #29abe1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 30px;
+}
+body .NavBar .BottomBarMenu .MenuButton {
+  position: relative;
+  border-color: #fff;
+  color: #fff;
+  font-family: inherit;
+  border-radius: 5px;
+  border: 5px solid #fff !important;
+}
+body .NavBar .MobileMenu {
+  position: absolute;
+  width: 100vw;
+  height: 100px;
+  top: 0;
+  left: 0;
+  background: #29abe1;
+}
+body .Footer {
+  width: 100%;
+  height: auto;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+body .Footer .FooterContent {
+  width: 100%;
+  height: auto;
+  background-color: #F2F2F2;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 50px 10vw;
+  flex-wrap: wrap;
+  color: #555;
+}
+body .Footer .FooterContent > * {
+  height: 100%;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+body .Footer .FooterContent .Contact {
+  display: block;
+}
+body .Footer .FooterContent .Contact p {
+  font-weight: 300;
+  font-size: 16px;
+}
+body .Footer .FooterContent .Contact .Title {
+  font-weight: bold;
+  font-size: clamp(18px, 1.1vw, 25px);
+  margin-bottom: 20px;
+}
+body .Footer .FooterContent .Contact * {
+  height: min-content;
+}
+body .Footer .FooterContent .Links {
+  display: block;
+}
+body .Footer .FooterContent .Links p {
+  font-weight: 300;
+  font-size: 16px;
+}
+body .Footer .FooterContent .Links .Title {
+  font-weight: bold;
+  font-size: clamp(18px, 1.1vw, 25px);
+  margin-bottom: 20px;
+}
+body .Footer .FooterContent .Links * {
+  height: min-content;
+}
+body .Footer .FooterContent .Social {
+  display: block;
+}
+body .Footer .FooterContent .Social .Title {
+  font-weight: bold;
+  font-size: clamp(18px, 1.1vw, 25px);
+  margin-bottom: 20px;
+}
+body .Footer .FooterContent .Social .SocialIcons {
+  display: block;
+}
+body .Footer .FooterContent .Social .SocialIcons > * {
+  margin-right: 20px;
+  font-size: 16px;
+}
+body .Footer .FooterContent .Social * {
+  height: min-content;
+}
+body .Footer .FooterInfo {
+  width: 100%;
+  height: auto;
+  padding: 50px 50px;
+  background-color: #29abe1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  font-size: clamp(16px, 1vw, 25px);
+}
+body .Home {
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  background: #fcfcfc;
+}
+body .Home .HomeContent {
+  width: 100%;
+  min-height: 1000px;
+  padding: 30px 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .Home .HomeContent .Container {
+  position: relative;
+  height: auto;
+  width: 60%;
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  body .Home .HomeContent .Container {
+    width: 100%;
+  }
+}
+body .Home .HomeContent p {
+  width: 100%;
+  height: auto;
+  padding: 0 0px;
+  margin: 50px 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 16px;
+  line-height: 27.5px;
+  font-weight: 500;
+}
+body .Home .HomeContent p br {
+  display: block;
+  margin: 10px 0;
+  margin-bottom: 2em;
+}
+@media (max-width: 767px) {
+  body .Home .HomeContent p {
+    padding: 0 0px;
+  }
+}
+body .Home .HomeContent .Image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+body .Home .HomeContent .Image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*# sourceMappingURL=main.css.map */
