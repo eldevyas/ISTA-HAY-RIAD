@@ -127,15 +127,71 @@ body .NavBar .BottomBarMenu .MenuButton {
   color: #fff;
   font-family: inherit;
   border-radius: 5px;
-  border: 5px solid #fff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
 }
-body .NavBar .MobileMenu {
-  position: absolute;
+body .NavBar .BottomBarMenu .MenuButton:hover {
+  border: 1.5px solid rgba(255, 255, 255, 0.75) !important;
+}
+body .MobileMenu {
+  position: fixed;
   width: 100vw;
-  height: 100px;
+  height: 100vh;
   top: 0;
   left: 0;
-  background: #29abe1;
+  background: transparent;
+  z-index: 10000;
+}
+body .MobileMenu .Background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px) brightness(0.75) !important;
+}
+body .MobileMenu .Menu {
+  min-width: 50%;
+  min-height: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 10001;
+  top: 0;
+  left: 0;
+  position: fixed;
+  padding: 0.5rem 1rem;
+}
+body .MobileMenu .Menu .MenuTitle {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.25rem;
+}
+body .MobileMenu .Menu .MenuTitle p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+}
+body .MobileMenu .Menu .MenuLinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+body .MobileMenu .Menu .MenuLinks .ButtonInactive {
+  color: #555;
+  opacity: 0.5;
+  width: 100%;
+  font-family: inherit;
+  transition: all 100ms ease-in-out;
+}
+body .MobileMenu .Menu .MenuLinks .ButtonInactive:hover {
+  color: #29abe1;
+  opacity: 1;
 }
 body .Footer {
   width: 100%;

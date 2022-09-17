@@ -1,0 +1,153 @@
+.NavBar {
+  width: 100%;
+  height: 100%;
+}
+.NavBar .UpperBar {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px 30px;
+  height: 70px;
+}
+.NavBar .UpperBar .desktop-header-logo {
+  position: relative;
+}
+.NavBar .UpperBar h1 {
+  text-align: center;
+  font-weight: 900;
+  color: #29abe1;
+  font-size: clamp(25px, 1.5vw, 35px);
+}
+.NavBar .UpperBar * {
+  flex: 1;
+}
+@media (max-width: 768px) {
+  .NavBar .UpperBar {
+    padding: 10px 0px;
+  }
+  .NavBar .UpperBar div:last-child {
+    display: none;
+  }
+  .NavBar .UpperBar h1 {
+    font-size: 20px;
+  }
+}
+.NavBar .BottomBar {
+  position: relative;
+  height: auto;
+  background: #29abe1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.NavBar .BottomBar .ButtonGroup {
+  position: relative;
+  height: auto;
+  background: #29abe1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.NavBar .BottomBar .ButtonGroup .ButtonGrouped {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  border-color: #fff;
+  font-family: inherit;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  White-space: nowrap;
+  border-radius: 0px;
+}
+.NavBar .BottomBarMenu {
+  width: 100%;
+  height: auto;
+  background: #29abe1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 30px;
+}
+.NavBar .BottomBarMenu .MenuButton {
+  position: relative;
+  border-color: #fff;
+  color: #fff;
+  font-family: inherit;
+  border-radius: 5px;
+  border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+}
+.NavBar .BottomBarMenu .MenuButton:hover {
+  border: 1.5px solid rgba(255, 255, 255, 0.75) !important;
+}
+
+.MobileMenu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 10000;
+}
+.MobileMenu .Background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px) brightness(0.75) !important;
+}
+.MobileMenu .Menu {
+  min-width: 50%;
+  min-height: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 10001;
+  top: 0;
+  left: 0;
+  position: fixed;
+  padding: 0.5rem 1rem;
+}
+.MobileMenu .Menu .MenuTitle {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.25rem;
+}
+.MobileMenu .Menu .MenuTitle p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+}
+.MobileMenu .Menu .MenuLinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+.MobileMenu .Menu .MenuLinks .ButtonInactive {
+  color: #555;
+  opacity: 0.5;
+  width: 100%;
+  font-family: inherit;
+  transition: all 100ms ease-in-out;
+}
+.MobileMenu .Menu .MenuLinks .ButtonInactive:hover {
+  color: #29abe1;
+  opacity: 1;
+}

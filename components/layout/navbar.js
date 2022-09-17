@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 function DesktopHeader() {
     return (
@@ -73,7 +74,26 @@ function MobileHeader() {
                 isOpen && (
                 <>
                     <div className="MobileMenu">
+                        <div className="Background"></div>
 
+                        <div className="Menu">
+                            <div className = "MenuTitle">
+                                <p>Menu</p>
+
+                                <IconButton aria-label="close" title="Close"  onClick={toggleOpen}>
+                                    <CloseIcon/>
+                                </IconButton>
+                            </div>
+
+                            <div className = "MenuLinks">
+                                <Button className="ButtonInactive">Accueil</Button>
+                                <Button className="ButtonInactive">à propos</Button>
+                                <Button className="ButtonInactive">Formations</Button>
+                                <Button className="ButtonInactive">Actualités</Button>
+                                <Button className="ButtonInactive">Espace Stagiaires</Button>
+                                <Button className="ButtonInactive">Contact</Button>
+                            </div>
+                        </div>
                     </div>
                 </>
                 )
