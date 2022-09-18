@@ -1,4 +1,15 @@
 import { SocialIcon } from 'react-social-icons';
+import Link from 'next/link';
+import QuickLink from './utils/quickLink';
+
+const quickLinks = [
+    { text: 'Accueil', href: '/'},
+    { text: 'À propos de nous', href: '/about'},
+    { text: 'Formations', href: '/formations'},
+    { text: 'Actualités', href: '/actualités'},
+    { text: 'Espace Stagiaires', href: '/Espace-Stagiaires' },
+    { text: 'Contact', href: '/contact'}
+];
 
 export default function Footer() {
     return (
@@ -14,12 +25,15 @@ export default function Footer() {
 
                     <div className = "Links">
                         <p className = "Title">Links</p>
-                        <p>Accueil</p>
-                        <p>à propos de nous</p>
-                        <p>Formations</p>
-                        <p>Actualités</p>
-                        <p>Espace Stagiaires</p>
-                        <p>Contact</p>
+                        <ul>
+                        {quickLinks.map((link, idx) => (
+                            <li
+                            key={link.text}
+                            >
+                                <QuickLink {...link} />
+                            </li>
+                        ))} 
+                        </ul>
                     </div>
 
                     <div className = "Social">

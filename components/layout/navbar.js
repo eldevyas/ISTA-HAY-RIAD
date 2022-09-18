@@ -104,7 +104,7 @@ function MobileHeader() {
 
 
 const NavBar = () => {
-    const [isDesktop, setDesktop] = useState(false);
+    const [isDesktop, setDesktop] = useState(window.innerWidth > 800);
     
     const updateMedia = () => {
         setDesktop(window.innerWidth > 800);
