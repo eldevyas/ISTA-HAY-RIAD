@@ -52,9 +52,3 @@ body {
     color: var(--color-text-primary);
     transition: background 0.25s ease-in-out;
 }
-
-html[data-scheme="dark"] {
-    body {
-        background: var(--color-bg-primary);
-    }
-}

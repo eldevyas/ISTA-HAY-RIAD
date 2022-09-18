@@ -457,8 +457,4 @@ body {
   transition: background 0.25s ease-in-out;
 }
 
-html[data-scheme=dark] body {
-  background: var(--color-bg-primary);
-}
-
 /*# sourceMappingURL=main.css.map */

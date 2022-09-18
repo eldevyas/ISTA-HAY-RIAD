@@ -5,9 +5,11 @@ html[data-theme=light] {
   --color-text-primary: rgba(#000, 0.5);
   --color-text-secondary: #076963;
   --color-bg-primary: #fcfcfc;
+  --color-bg-secondary: #050505;
   --color-bg-toggle: #1e90ff;
   --footer-background-color: #f2F2F2;
-  --scrollbar-thumb-color: rgba(#000, 0.2);
+  --scrollbar-thumb-color: rgba(#000, 1);
+  --scrollbar-track-color: rgba(#fff, 1);
 }
 
 body[data-theme=dark],
@@ -17,10 +19,12 @@ html[data-theme=dark] {
   --color-text-primary: #e3e3e3;
   --color-text-secondary: #ff6b00;
   --color-bg-primary: #041a22;
+  --color-bg-secondary: #fcfcfc;
   --color-bg-toggle: #a9a9a9;
   --footer-background-color: #151515;
   --footer-text-color: #e3e3e3;
-  --scrollbar-thumb-color: rgba(#fff, 0.2);
+  --scrollbar-thumb-color: rgba(#fff, 1);
+  --scrollbar-track-color: rgba(#000, 1);
 }
 
 html,
@@ -273,7 +277,7 @@ body .MobileMenu .Menu {
   min-width: 50%;
   min-height: 100%;
   height: 100%;
-  background: #fff;
+  background: var(--color-bg-primary);
   z-index: 10001;
   top: 0;
   left: 0;
@@ -288,14 +292,18 @@ body .MobileMenu .Menu .MenuTitle {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(var(--color-bg-secondary), 1);
   padding-bottom: 0.25rem;
 }
 
 body .MobileMenu .Menu .MenuTitle p {
   font-size: 1.1rem;
   font-weight: 500;
-  color: #555;
+  color: var(--color-text-primary);
+}
+
+body .MobileMenu .Menu .MenuTitle button {
+  color: var(--color-text-primary);
 }
 
 body .MobileMenu .Menu .MenuLinks {
@@ -307,7 +315,7 @@ body .MobileMenu .Menu .MenuLinks {
 }
 
 body .MobileMenu .Menu .MenuLinks .ButtonGrouped {
-  color: #555;
+  color: var(--color-text-primary);
   opacity: 0.5;
   width: 100%;
   font-family: inherit;
@@ -505,10 +513,6 @@ body {
   background: var(--color-bg-primary);
   color: var(--color-text-primary);
   transition: background 0.25s ease-in-out;
-}
-
-html[data-scheme=dark] body {
-  background: var(--color-bg-primary);
 }
 
 /*# sourceMappingURL=main.css.map */

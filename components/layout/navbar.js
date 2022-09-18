@@ -52,8 +52,8 @@ function SwitchTheme(e) {
 
 
 function DesktopHeader() {
-    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-
+    let isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    
     return (
         <div className="NavBar Desktop">
             <div className="UpperBar">
@@ -67,7 +67,7 @@ function DesktopHeader() {
                 <div className="Empty">
                     <div className="Inside">
                         <label className="switch" onClick={(e) => (SwitchTheme(e))}>
-                            <input defaultChecked={ isDark ? 'true' : 'false'} type="checkbox"/>
+                            <input defaultChecked={isDark} type="checkbox"/>
                             <span className="slider"></span>
                         </label>
                     </div>
