@@ -53,7 +53,7 @@ function SwitchTheme(e) {
 
 function DesktopHeader() {
     let isDark = document.documentElement.getAttribute("data-theme") === "dark";
-    
+
     return (
         <div className="NavBar Desktop">
             <div className="UpperBar">
@@ -100,6 +100,10 @@ function MobileHeader() {
         setIsOpen(!isOpen);
     }
 
+    const closeMenu = () => {
+        setIsOpen(false);
+    }
+
     return (
         <>
             <div className="NavBar Mobile">
@@ -132,7 +136,7 @@ function MobileHeader() {
                 isOpen && (
                 <>
                     <div className="MobileMenu">
-                        <div className="Background" onClick={toggleOpen}></div>
+                        <div className="Background" onClick={closeMenu}></div>
 
                         <div className="Menu">
                             <div className = "MenuTitle">
@@ -146,7 +150,7 @@ function MobileHeader() {
                             <div className = "MenuLinks">
                             {
                                 buttonLinks.map((link, index) => (
-                                    <ActiveButton key={index} href={link.href}>
+                                    <ActiveButton key={index} href={link.href} onClick={toggleOpen}>
                                         {link.text}
                                     </ActiveButton>
                                 ))

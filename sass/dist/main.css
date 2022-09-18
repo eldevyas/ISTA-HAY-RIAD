@@ -41,7 +41,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
   background: transparent;
-  background: var();
+  background: var(--scrollbar-track-color);
   /* color of the tracking area */
 }
 
@@ -50,7 +50,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 0px;
 }
 body::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(var(--blue), 1);
+  background-color: var(--blue);
 }
 
 a {
