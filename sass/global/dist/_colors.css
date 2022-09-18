@@ -5,6 +5,7 @@ html[data-theme=light] {
   --color-text-primary: rgba(#000, 0.5);
   --color-text-secondary: #076963;
   --color-bg-primary: #fcfcfc;
+  --color-bg-secondary: #050505;
   --color-bg-toggle: #1e90ff;
   --footer-background-color: #f2F2F2;
   --scrollbar-thumb-color: rgba(#000, 1);
@@ -18,6 +19,7 @@ html[data-theme=dark] {
   --color-text-primary: #e3e3e3;
   --color-text-secondary: #ff6b00;
   --color-bg-primary: #041a22;
+  --color-bg-secondary: #fcfcfc;
   --color-bg-toggle: #a9a9a9;
   --footer-background-color: #151515;
   --footer-text-color: #e3e3e3;
