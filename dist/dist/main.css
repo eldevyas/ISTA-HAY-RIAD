@@ -1,22 +1,26 @@
-body,
+body[data-theme=light],
 html[data-theme=light] {
   --blue: #29abe1;
   --green: #39b549;
-  --color-text-primary: #27201a;
+  --color-text-primary: rgba(#000, 0.5);
   --color-text-secondary: #076963;
   --color-bg-primary: #fcfcfc;
   --color-bg-toggle: #1e90ff;
   --footer-background-color: #f2F2F2;
+  --scrollbar-thumb-color: rgba(#000, 0.2);
 }
 
+body[data-theme=dark],
 html[data-theme=dark] {
-  --blue: #29abe1 !important;
-  --green: #39b549 !important;
-  --color-text-primary: #e3e3e3 !important;
-  --color-text-secondary: #ff6b00 !important;
-  --color-bg-primary: #15232d !important;
-  --color-bg-toggle: #a9a9a9 !important;
+  --blue: #4e9bbb;
+  --green: #41ac4f;
+  --color-text-primary: #e3e3e3;
+  --color-text-secondary: #ff6b00;
+  --color-bg-primary: #041a22;
+  --color-bg-toggle: #a9a9a9;
   --footer-background-color: #151515;
+  --footer-text-color: #e3e3e3;
+  --scrollbar-thumb-color: rgba(#fff, 0.2);
 }
 
 html,
@@ -33,11 +37,12 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
   background: transparent;
+  background: var();
   /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--scrollbar-thumb-color);
   border-radius: 0px;
 }
 
@@ -346,7 +351,7 @@ body .Footer .FooterContent {
   padding: 50px 10vw;
   flex-wrap: wrap;
   gap: 2rem;
-  color: #555;
+  color: var(--footer-text-color);
 }
 
 body .Footer .FooterContent > * {
@@ -420,12 +425,12 @@ body .Footer .FooterInfo {
   width: 100%;
   height: auto;
   padding: 50px 50px;
-  background-color: #39b549;
+  background-color: var(--blue);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #fff;
+  color: #f2F2F2;
   font-size: clamp(16px, 1vw, 25px);
 }
 
@@ -465,7 +470,7 @@ body .Home .HomeContent p {
   height: auto;
   padding: 0 0px;
   margin: 50px 0;
-  color: rgba(0, 0, 0, 0.65);
+  color: var(--color-text-primary);
   font-size: 16px;
   line-height: 27.5px;
   font-weight: 500;

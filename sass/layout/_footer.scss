@@ -17,7 +17,7 @@
         padding: 50px 10vw;
         flex-wrap: wrap;
         gap: 2rem;
-        color: #555;
+        color: var(--footer-text-color);
         >* {
             // flex: 1;
             height: 100%;
@@ -77,12 +77,12 @@
         width: 100%;
         height: auto;
         padding: 50px 50px;
-        background-color: $green;
+        background-color: var(--blue);
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        color: #fff;
+        color: #f2F2F2;
         font-size: clamp(16px, 1vw, 25px);
     }
 }
