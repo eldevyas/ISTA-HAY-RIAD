@@ -2,7 +2,7 @@
     width: 100%;
     max-width: 100vw;
     height: 100%;
-    background: #fcfcfc;
+    // background: var(--color-bg-primary);
     .HomeContent {
         width: 100%;
         min-height: 1000px;
@@ -15,7 +15,7 @@
             position: relative;
             height: auto;
             width: 60%;
-            background-color: #fcfcfc;
+            // background-color: var(--color-bg-primary);
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -29,7 +29,7 @@
             height: auto;
             padding: 0 0px;
             margin: 50px 0;
-            color: rgba(black, 0.65);
+            color: var(--color-text-primary);
             font-size: 16px;
             line-height: 27.5px;
             font-weight: 500;

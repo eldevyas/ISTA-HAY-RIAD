@@ -1,4 +1,4 @@
-body[data-theme=dark],
+body,
 html[data-theme=light] {
   --blue: #29abe1;
   --green: #39b549;
@@ -9,14 +9,13 @@ html[data-theme=light] {
   --footer-background-color: #f2F2F2;
 }
 
-body[data-theme=dark],
 html[data-theme=dark] {
-  --blue: #29abe1;
-  --green: #39b549;
-  --color-text-primary: #e3e3e3;
-  --color-text-secondary: #ff6b00;
-  --color-bg-primary: #15232d;
-  --color-bg-toggle: #a9a9a9;
+  --blue: #29abe1 !important;
+  --green: #39b549 !important;
+  --color-text-primary: #e3e3e3 !important;
+  --color-text-secondary: #ff6b00 !important;
+  --color-bg-primary: #15232d !important;
+  --color-bg-toggle: #a9a9a9 !important;
   --footer-background-color: #151515;
 }
 
@@ -412,7 +411,7 @@ body .Home .HomeContent p {
   height: auto;
   padding: 0 0px;
   margin: 50px 0;
-  color: var(--color-text-primary);
+  color: rgba(0, 0, 0, 0.65);
   font-size: 16px;
   line-height: 27.5px;
   font-weight: 500;
@@ -449,5 +448,3 @@ body {
 html[data-scheme=dark] body {
   background: var(--color-bg-primary);
 }
-
-/*# sourceMappingURL=main.css.map */

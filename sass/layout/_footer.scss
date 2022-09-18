@@ -1,7 +1,7 @@
 .Footer {
     width: 100%;
     height: auto;
-    background-color: #fff;
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,13 +9,14 @@
     .FooterContent {
         width: 100%;
         height: auto;
-        background-color: #f2F2F2;
+        background-color: var(--footer-background-color);
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
         padding: 50px 10vw;
         flex-wrap: wrap;
+        gap: 2rem;
         color: #555;
         >* {
             // flex: 1;
@@ -76,7 +77,7 @@
         width: 100%;
         height: auto;
         padding: 50px 50px;
-        background-color: $blue;
+        background-color: $green;
         display: flex;
         justify-content: center;
         align-items: center;

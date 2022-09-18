@@ -32,12 +32,28 @@ function ActiveButton({ children, href }) {
         {children}
       </Button>
     )
-  }
+}
+
+function SwitchTheme(e) {
+    var currentTheme = document.documentElement.getAttribute("data-theme");
+
+    // Check if the checkbox is checked
+    if (e.target.checked) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", document.documentElement.getAttribute("data-theme"));
+    } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", document.documentElement.getAttribute("data-theme"));
+    }
+
+};
 
 
 
 
 function DesktopHeader() {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+
     return (
         <div className="NavBar Desktop">
             <div className="UpperBar">
@@ -49,7 +65,12 @@ function DesktopHeader() {
                 </h1>
 
                 <div className="Empty">
-                    
+                    <div className="Inside">
+                        <label className="switch" onClick={(e) => (SwitchTheme(e))}>
+                            <input defaultChecked={ isDark ? 'true' : 'false'} type="checkbox"/>
+                            <span className="slider"></span>
+                        </label>
+                    </div>
                 </div>
             </div>
 
@@ -91,7 +112,12 @@ function MobileHeader() {
                     </h1>
 
                     <div className="Empty">
-                        
+                        <div className="Inside">
+                            <label className="switch" onClick={(e) => (SwitchTheme(e))}>
+                                <input type="checkbox"/>
+                                <span className="slider"></span>
+                            </label>
+                        </div>
                     </div>
                 </div>
 

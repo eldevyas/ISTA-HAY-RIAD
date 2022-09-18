@@ -20,7 +20,7 @@ body::-webkit-scrollbar-thumb {
     background-color: rgba($color: #000000, $alpha: 0.2);
     border-radius: 0px;
     &:hover {
-        background-color: rgba($blue, 1);
+        background-color: rgba(var(--blue), 1);
     }
 }
 
@@ -36,7 +36,7 @@ a {
 }
 
 body {
-    background: #FCFCFC;
+    // background: #FCFCFC;
     width: 100%;
     max-width: 100vw;
     min-height: 100vh;
@@ -44,4 +44,16 @@ body {
     @import "./layout/navbar";
     @import "./layout/footer";
     @import "./pages/home";
+}
+
+body {
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    transition: background 0.25s ease-in-out;
+}
+
+html[data-scheme="dark"] {
+    body {
+        background: var(--color-bg-primary);
+    }
 }

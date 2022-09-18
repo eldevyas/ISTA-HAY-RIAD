@@ -1,0 +1,21 @@
+body[data-theme=dark],
+html[data-theme=light] {
+  --blue: #29abe1;
+  --green: #39b549;
+  --color-text-primary: #27201a;
+  --color-text-secondary: #076963;
+  --color-bg-primary: #fcfcfc;
+  --color-bg-toggle: #1e90ff;
+  --footer-background-color: #f2F2F2;
+}
+
+body[data-theme=dark],
+html[data-theme=dark] {
+  --blue: #29abe1;
+  --green: #39b549;
+  --color-text-primary: #e3e3e3;
+  --color-text-secondary: #ff6b00;
+  --color-bg-primary: #15232d;
+  --color-bg-toggle: #a9a9a9;
+  --footer-background-color: #151515;
+}

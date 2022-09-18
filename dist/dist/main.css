@@ -1,4 +1,4 @@
-body[data-theme=dark],
+body,
 html[data-theme=light] {
   --blue: #29abe1;
   --green: #39b549;
@@ -9,14 +9,13 @@ html[data-theme=light] {
   --footer-background-color: #f2F2F2;
 }
 
-body[data-theme=dark],
 html[data-theme=dark] {
-  --blue: #29abe1;
-  --green: #39b549;
-  --color-text-primary: #e3e3e3;
-  --color-text-secondary: #ff6b00;
-  --color-bg-primary: #15232d;
-  --color-bg-toggle: #a9a9a9;
+  --blue: #29abe1 !important;
+  --green: #39b549 !important;
+  --color-text-primary: #e3e3e3 !important;
+  --color-text-secondary: #ff6b00 !important;
+  --color-bg-primary: #15232d !important;
+  --color-bg-toggle: #a9a9a9 !important;
   --footer-background-color: #151515;
 }
 
@@ -41,6 +40,7 @@ body::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 0px;
 }
+
 body::-webkit-scrollbar-thumb:hover {
   background-color: rgba(var(--blue), 1);
 }
@@ -62,10 +62,12 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
+
 body .NavBar {
   width: 100%;
   height: 100%;
 }
+
 body .NavBar .UpperBar {
   width: 100%;
   height: 100%;
@@ -78,26 +80,32 @@ body .NavBar .UpperBar {
   padding: 10px 30px;
   height: 70px;
 }
+
 body .NavBar .UpperBar .desktop-header-logo {
   position: relative;
 }
+
 body .NavBar .UpperBar h1 {
   text-align: center;
   font-weight: 900;
   color: var(--blue);
   font-size: clamp(25px, 1.5vw, 35px);
 }
+
 body .NavBar .UpperBar * {
   flex: 1;
 }
+
 @media (max-width: 768px) {
   body .NavBar .UpperBar {
     padding: 10px 0px;
   }
+
   body .NavBar .UpperBar div:last-child {
     display: flex;
     padding-right: 10px;
   }
+
   body .NavBar .UpperBar h1 {
     font-size: 20px;
   }
@@ -108,6 +116,7 @@ body .NavBar .UpperBar .Empty {
   align-items: center;
   z-index: 500;
 }
+
 body .NavBar .UpperBar .Empty .Inside {
   display: flex;
   justify-content: flex-end;
@@ -116,6 +125,7 @@ body .NavBar .UpperBar .Empty .Inside {
   /* Hide default HTML checkbox */
   /* The slider */
 }
+
 body .NavBar .UpperBar .Empty .Inside .switch {
   --width-of-switch: 3.5em;
   --height-of-switch: 2em;
@@ -128,11 +138,13 @@ body .NavBar .UpperBar .Empty .Inside .switch {
   height: var(--height-of-switch);
   transform: scale(0.75);
 }
+
 body .NavBar .UpperBar .Empty .Inside .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
+
 body .NavBar .UpperBar .Empty .Inside .slider {
   position: absolute;
   cursor: pointer;
@@ -144,6 +156,7 @@ body .NavBar .UpperBar .Empty .Inside .slider {
   transition: 0.4s;
   border-radius: 30px;
 }
+
 body .NavBar .UpperBar .Empty .Inside .slider:before {
   position: absolute;
   content: "";
@@ -156,15 +169,18 @@ body .NavBar .UpperBar .Empty .Inside .slider:before {
   background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
   transition: 0.4s;
 }
+
 body .NavBar .UpperBar .Empty .Inside input:checked + .slider {
   background-color: #303136;
 }
+
 body .NavBar .UpperBar .Empty .Inside input:checked + .slider:before {
   left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
   background: #303136;
   /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
   box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
 }
+
 body .NavBar .BottomBar {
   position: relative;
   height: auto;
@@ -174,6 +190,7 @@ body .NavBar .BottomBar {
   justify-content: center;
   align-items: center;
 }
+
 body .NavBar .BottomBar .ButtonGroup {
   position: relative;
   height: auto;
@@ -183,6 +200,7 @@ body .NavBar .BottomBar .ButtonGroup {
   justify-content: space-between;
   align-items: center;
 }
+
 body .NavBar .BottomBar .ButtonGroup .ButtonGrouped {
   width: 100%;
   height: 100%;
@@ -197,10 +215,12 @@ body .NavBar .BottomBar .ButtonGroup .ButtonGrouped {
   White-space: nowrap;
   border-radius: 0px;
 }
+
 body .NavBar .BottomBar .ButtonGroup .ButtonGrouped.Active {
   background-color: var(--blue);
   color: #fff;
 }
+
 body .NavBar .BottomBarMenu {
   width: 100%;
   height: auto;
@@ -211,6 +231,7 @@ body .NavBar .BottomBarMenu {
   align-items: center;
   padding: 10px 30px;
 }
+
 body .NavBar .BottomBarMenu .MenuButton {
   position: relative;
   border-color: #fff;
@@ -219,9 +240,11 @@ body .NavBar .BottomBarMenu .MenuButton {
   border-radius: 5px;
   border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
 }
+
 body .NavBar .BottomBarMenu .MenuButton:hover {
   border: 1.5px solid rgba(255, 255, 255, 0.75) !important;
 }
+
 body .MobileMenu {
   position: fixed;
   width: 100vw;
@@ -231,6 +254,7 @@ body .MobileMenu {
   background: transparent;
   z-index: 10000;
 }
+
 body .MobileMenu .Background {
   position: fixed;
   top: 0;
@@ -239,6 +263,7 @@ body .MobileMenu .Background {
   height: 100%;
   backdrop-filter: blur(5px) brightness(0.75) !important;
 }
+
 body .MobileMenu .Menu {
   min-width: 50%;
   min-height: 100%;
@@ -250,6 +275,7 @@ body .MobileMenu .Menu {
   position: fixed;
   padding: 0.5rem 1rem;
 }
+
 body .MobileMenu .Menu .MenuTitle {
   width: 100%;
   height: auto;
@@ -260,11 +286,13 @@ body .MobileMenu .Menu .MenuTitle {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 0.25rem;
 }
+
 body .MobileMenu .Menu .MenuTitle p {
   font-size: 1.1rem;
   font-weight: 500;
   color: #555;
 }
+
 body .MobileMenu .Menu .MenuLinks {
   display: flex;
   flex-direction: column;
@@ -272,6 +300,7 @@ body .MobileMenu .Menu .MenuLinks {
   align-items: flex-start;
   margin-top: 1rem;
 }
+
 body .MobileMenu .Menu .MenuLinks .ButtonGrouped {
   color: #555;
   opacity: 0.5;
@@ -280,18 +309,22 @@ body .MobileMenu .Menu .MenuLinks .ButtonGrouped {
   transition: all 100ms ease-in-out;
   border: none !important;
 }
+
 body .MobileMenu .Menu .MenuLinks .ButtonGrouped:hover {
   color: var(--blue);
   opacity: 1;
 }
+
 body .MobileMenu .Menu .MenuLinks .ButtonGrouped:not(:last-child) {
   margin-bottom: 0.25rem;
 }
+
 body .MobileMenu .Menu .MenuLinks .ButtonGrouped.Active {
   color: #fff;
   background-color: var(--blue);
   opacity: 1;
 }
+
 body .Footer {
   width: 100%;
   height: auto;
@@ -301,6 +334,7 @@ body .Footer {
   align-items: center;
   justify-content: space-between;
 }
+
 body .Footer .FooterContent {
   width: 100%;
   height: auto;
@@ -314,59 +348,74 @@ body .Footer .FooterContent {
   gap: 2rem;
   color: #555;
 }
+
 body .Footer .FooterContent > * {
   height: 100%;
   overflow: hidden;
   margin-bottom: 50px;
 }
+
 body .Footer .FooterContent .Contact {
   display: block;
 }
+
 body .Footer .FooterContent .Contact p {
   font-weight: 300;
   font-size: 16px;
 }
+
 body .Footer .FooterContent .Contact .Title {
   font-weight: bold;
   font-size: clamp(18px, 1.1vw, 25px);
   margin-bottom: 20px;
 }
+
 body .Footer .FooterContent .Contact * {
   height: min-content;
 }
+
 body .Footer .FooterContent .Links {
   display: block;
 }
+
 body .Footer .FooterContent .Links p {
   font-weight: 300;
   font-size: 16px;
 }
+
 body .Footer .FooterContent .Links .Title {
   font-weight: bold;
   font-size: clamp(18px, 1.1vw, 25px);
   margin-bottom: 20px;
 }
+
 body .Footer .FooterContent .Links * {
   height: min-content;
 }
+
 body .Footer .FooterContent .Social {
   display: block;
 }
+
 body .Footer .FooterContent .Social .Title {
   font-weight: bold;
   font-size: clamp(18px, 1.1vw, 25px);
   margin-bottom: 20px;
 }
+
 body .Footer .FooterContent .Social .SocialIcons {
   display: block;
 }
+
 body .Footer .FooterContent .Social .SocialIcons > * {
   margin-right: 20px;
   font-size: 16px;
 }
+
 body .Footer .FooterContent .Social * {
   height: min-content;
 }
+
 body .Footer .FooterInfo {
   width: 100%;
   height: auto;
@@ -379,11 +428,13 @@ body .Footer .FooterInfo {
   color: #fff;
   font-size: clamp(16px, 1vw, 25px);
 }
+
 body .Home {
   width: 100%;
   max-width: 100vw;
   height: 100%;
 }
+
 body .Home .HomeContent {
   width: 100%;
   min-height: 1000px;
@@ -393,6 +444,7 @@ body .Home .HomeContent {
   justify-content: center;
   align-items: center;
 }
+
 body .Home .HomeContent .Container {
   position: relative;
   height: auto;
@@ -402,6 +454,7 @@ body .Home .HomeContent .Container {
   justify-content: flex-start;
   align-items: center;
 }
+
 @media screen and (max-width: 767px) {
   body .Home .HomeContent .Container {
     width: 100%;
@@ -412,16 +465,18 @@ body .Home .HomeContent p {
   height: auto;
   padding: 0 0px;
   margin: 50px 0;
-  color: var(--color-text-primary);
+  color: rgba(0, 0, 0, 0.65);
   font-size: 16px;
   line-height: 27.5px;
   font-weight: 500;
 }
+
 body .Home .HomeContent p br {
   display: block;
   margin: 10px 0;
   margin-bottom: 2em;
 }
+
 @media (max-width: 767px) {
   body .Home .HomeContent p {
     padding: 0 0px;
@@ -434,6 +489,7 @@ body .Home .HomeContent .Image {
   overflow: hidden;
   border-radius: 20px;
 }
+
 body .Home .HomeContent .Image img {
   width: 100%;
   height: 100%;
