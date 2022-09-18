@@ -144,16 +144,22 @@ $blue: #29abe1;
             justify-content: flex-start;
             align-items: flex-start;
             margin-top: 1rem;
-            .ButtonInactive {
+            .ButtonGrouped {
                 color: #555;
                 opacity: 0.5;
                 width: 100%;
                 font-family: inherit;
                 transition: all 100ms ease-in-out;
+                border: none !important;
                 &:hover {
                     color: $blue;
                     opacity: 1;
                 }
+            }
+            .ButtonGrouped.Active {
+                color: #fff;
+                background-color: $blue;
+                opacity: 1;
             }
         }
     }

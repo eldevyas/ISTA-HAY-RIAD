@@ -106,7 +106,7 @@ function MobileHeader() {
                 isOpen && (
                 <>
                     <div className="MobileMenu">
-                        <div className="Background"></div>
+                        <div className="Background" onClick={toggleOpen}></div>
 
                         <div className="Menu">
                             <div className = "MenuTitle">
@@ -118,12 +118,13 @@ function MobileHeader() {
                             </div>
 
                             <div className = "MenuLinks">
-                                <Button className="ButtonInactive">Accueil</Button>
-                                <Button className="ButtonInactive">à propos</Button>
-                                <Button className="ButtonInactive">Formations</Button>
-                                <Button className="ButtonInactive">Actualités</Button>
-                                <Button className="ButtonInactive">Espace Stagiaires</Button>
-                                <Button className="ButtonInactive">Contact</Button>
+                            {
+                                buttonLinks.map((link, index) => (
+                                    <ActiveButton key={index} href={link.href}>
+                                        {link.text}
+                                    </ActiveButton>
+                                ))
+                            }
                             </div>
                         </div>
                     </div>

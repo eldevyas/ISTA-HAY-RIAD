@@ -145,14 +145,20 @@
   align-items: flex-start;
   margin-top: 1rem;
 }
-.MobileMenu .Menu .MenuLinks .ButtonInactive {
+.MobileMenu .Menu .MenuLinks .ButtonGrouped {
   color: #555;
   opacity: 0.5;
   width: 100%;
   font-family: inherit;
   transition: all 100ms ease-in-out;
+  border: none !important;
 }
-.MobileMenu .Menu .MenuLinks .ButtonInactive:hover {
+.MobileMenu .Menu .MenuLinks .ButtonGrouped:hover {
   color: #29abe1;
+  opacity: 1;
+}
+.MobileMenu .Menu .MenuLinks .ButtonGrouped.Active {
+  color: #fff;
+  background-color: #29abe1;
   opacity: 1;
 }

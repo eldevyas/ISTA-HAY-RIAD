@@ -187,15 +187,21 @@ body .MobileMenu .Menu .MenuLinks {
   align-items: flex-start;
   margin-top: 1rem;
 }
-body .MobileMenu .Menu .MenuLinks .ButtonInactive {
+body .MobileMenu .Menu .MenuLinks .ButtonGrouped {
   color: #555;
   opacity: 0.5;
   width: 100%;
   font-family: inherit;
   transition: all 100ms ease-in-out;
+  border: none !important;
 }
-body .MobileMenu .Menu .MenuLinks .ButtonInactive:hover {
+body .MobileMenu .Menu .MenuLinks .ButtonGrouped:hover {
   color: #29abe1;
+  opacity: 1;
+}
+body .MobileMenu .Menu .MenuLinks .ButtonGrouped.Active {
+  color: #fff;
+  background-color: #29abe1;
   opacity: 1;
 }
 body .Footer {
