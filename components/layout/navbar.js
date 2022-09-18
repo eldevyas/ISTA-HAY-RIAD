@@ -5,6 +5,37 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+
+
+const buttonLinks = [
+    { text: 'Accueil', href: '/'},
+    { text: 'À propos de nous', href: '/about'},
+    { text: 'Formations', href: '/formations'},
+    { text: 'Actualités', href: '/actualites'},
+    { text: 'Espace Stagiaires', href: '/Espace-Stagiaires' },
+    { text: 'Contact', href: '/contact'}
+];
+
+function ActiveButton({ children, href }) {
+    const router = useRouter()
+    const currentClass = router.asPath === href ? 'Active' : 'Inactive'
+  
+    const handleClick = (e) => {
+      e.preventDefault()
+      router.push(href)
+    }
+  
+    return (
+      <Button variant="outlined" className={"ButtonGrouped" + " " + currentClass} href={href} onClick={handleClick}>
+        {children}
+      </Button>
+    )
+  }
+
+
+
 
 function DesktopHeader() {
     return (
@@ -24,12 +55,13 @@ function DesktopHeader() {
 
             <div className="BottomBar">
                 <ButtonGroup variant="outlined" aria-label="outlined button group" className="ButtonGroup">
-                    <Button className="ButtonGrouped">Accueil</Button>
-                    <Button className="ButtonGrouped">à propos</Button>
-                    <Button className="ButtonGrouped">Formations</Button>
-                    <Button className="ButtonGrouped">Actualités</Button>
-                    <Button className="ButtonGrouped">Espace Stagiaires</Button>
-                    <Button className="ButtonGrouped">Contact</Button>
+                    {
+                        buttonLinks.map((link, index) => (
+                            <ActiveButton key={index} href={link.href}>
+                                {link.text}
+                            </ActiveButton>
+                        ))
+                    }
                 </ButtonGroup>
             </div>
         </div>

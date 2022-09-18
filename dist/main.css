@@ -101,8 +101,9 @@ body .NavBar .BottomBar .ButtonGroup {
 body .NavBar .BottomBar .ButtonGroup .ButtonGrouped {
   width: 100%;
   height: 100%;
-  color: #fff;
-  border-color: #fff;
+  color: #29abe1;
+  border-color: #29abe1;
+  background-color: #fff;
   font-family: inherit;
   font-weight: bold;
   display: flex;
@@ -110,6 +111,10 @@ body .NavBar .BottomBar .ButtonGroup .ButtonGrouped {
   align-items: center;
   White-space: nowrap;
   border-radius: 0px;
+}
+body .NavBar .BottomBar .ButtonGroup .ButtonGrouped.Active {
+  background-color: #29abe1;
+  color: #fff;
 }
 body .NavBar .BottomBarMenu {
   width: 100%;

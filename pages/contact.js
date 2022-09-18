@@ -5,11 +5,9 @@ export default function HomePage() {
   return (
     <div>
         <Head>
-            <title>ISTA HAY RIAD - À propos de nous</title>
+            <title>ISTA HAY RIAD - Contact</title>
             <link rel="icon" href="/favicon.png" />
         </Head>
-        
-        
     </div>
   )
 }

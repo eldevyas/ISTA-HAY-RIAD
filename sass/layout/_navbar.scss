@@ -52,19 +52,25 @@ $blue: #29abe1;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            $borderWidth: 1px;
             .ButtonGrouped {
                 width: 100%;
                 height: 100%;
-                color: #fff;
-                border-color: #fff;
+                color: $blue;
+                border-color: $blue;
+                background-color: #fff;
                 font-family: inherit;
                 font-weight: bold;
-                // border: none;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 White-space: nowrap;
                 border-radius: 0px;
+            }
+            .ButtonGrouped.Active {
+                background-color: $blue;
+                color: #fff;
+                // border-color: $blue;
             }
         }
     }
