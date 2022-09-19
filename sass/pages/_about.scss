@@ -1,0 +1,63 @@
+.About {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: columns;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    .Header {
+        width: 100%;
+        height: auto;
+        // aspect-ratio: 1920/400;
+        background-color: var(--green);
+        .Background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            background-image: url("/BG-Image.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            // background-attachment: fixed;
+            z-index: 1;
+        }
+        .Container {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            z-index: 5;
+            position: relative;
+            top: 0;
+            left: 0;
+            padding: 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2rem;
+            .Text {
+                h1 {
+                    font-size: 1.75rem;
+                    margin-bottom: 0.5rem;
+                    max-width: 650px;
+                    color: #fcfcfc;
+                }
+                p {
+                    font-size: 1em;
+                    color: rgba(#fff, 0.75);
+                    max-width: 650px;
+                }
+            }
+            .Button {
+                color: #fff;
+                font-family: inherit;
+                background-color: var(--blue);
+                font-weight: 700;
+            }
+        }
+    }
+}

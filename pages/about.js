@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import About from '../components/about/aboutPage.js';
 
 export default function HomePage() {
   return (
@@ -9,7 +10,7 @@ export default function HomePage() {
             <link rel="icon" href="/favicon.png" />
         </Head>
         
-        
+        <About/>
     </div>
   )
 }

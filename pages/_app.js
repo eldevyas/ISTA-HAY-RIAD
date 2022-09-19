@@ -18,6 +18,8 @@ export default function MyApp({ Component, pageProps }) {
               stopDelayMs={200}
               height={3}
               showOnShallow={true}
+              options={{ showSpinner: false }}
+              style={{ zIndex: 50000 }}
             />
             <Layout>
                 <Component {...pageProps} />

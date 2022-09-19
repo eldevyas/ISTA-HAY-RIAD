@@ -450,6 +450,65 @@ body .Home .HomeContent .Image img {
   height: 100%;
   object-fit: cover;
 }
+body .About {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: columns;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+body .About .Header {
+  width: 100%;
+  height: auto;
+  background-color: var(--green);
+}
+body .About .Header .Background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  background-image: url("/BG-Image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+body .About .Header .Container {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 5;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+body .About .Header .Container .Text h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  max-width: 650px;
+  color: #fcfcfc;
+}
+body .About .Header .Container .Text p {
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 650px;
+}
+body .About .Header .Container .Button {
+  color: #fff;
+  font-family: inherit;
+  background-color: var(--blue);
+  font-weight: 700;
+}
 
 body {
   background: var(--color-bg-primary);
