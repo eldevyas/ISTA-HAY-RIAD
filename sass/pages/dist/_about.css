@@ -1,59 +1,60 @@
 .About {
   width: 100%;
-  height: auto;
+  max-width: 100vw;
+  height: 100%;
+}
+.About .AboutContent {
+  width: 100%;
+  min-height: 1000px;
+  padding: 30px 30px;
+  position: relative;
   display: flex;
-  flex-direction: columns;
   justify-content: center;
-  align-items: flex-start;
-  position: relative;
+  align-items: center;
 }
-.About .Header {
-  width: 100%;
+.About .AboutContent .Container {
+  position: relative;
   height: auto;
-  background-color: var(--green);
-}
-.About .Header .Background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  background-image: url("/BG-Image.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 1;
-}
-.About .Header .Container {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
-  z-index: 5;
-  position: relative;
-  top: 0;
-  left: 0;
-  padding: 2rem 2rem;
+  width: 60%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
+  justify-content: flex-start;
+  align-items: center;
 }
-.About .Header .Container .Text h1 {
-  font-size: 1.75rem;
-  margin-bottom: 0.5rem;
-  max-width: 650px;
-  color: #fcfcfc;
+@media screen and (max-width: 767px) {
+  .About .AboutContent .Container {
+    width: 100%;
+  }
 }
-.About .Header .Container .Text p {
-  font-size: 1em;
-  color: rgba(255, 255, 255, 0.75);
-  max-width: 650px;
+.About .AboutContent p {
+  width: 100%;
+  height: auto;
+  padding: 0 0px;
+  margin: 50px 0;
+  color: var(--color-text-primary);
+  font-size: 16px;
+  line-height: 27.5px;
+  font-weight: 500;
 }
-.About .Header .Container .Button {
-  color: #fff;
-  font-family: inherit;
-  background-color: var(--blue);
-  font-weight: 700;
+.About .AboutContent p br {
+  display: block;
+  margin: 10px 0;
+  margin-bottom: 2em;
+}
+@media (max-width: 767px) {
+  .About .AboutContent p {
+    padding: 0 0px;
+  }
+}
+.About .AboutContent .Image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.About .AboutContent .Image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

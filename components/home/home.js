@@ -1,10 +1,10 @@
 import React from 'react';
-import Content from './content';
+import Header from './interface/header';
 
 export default function Home() {
     return(
         <div className="Home">
-            <Content/>
+            <Header/>
         </div>
     );
 }
