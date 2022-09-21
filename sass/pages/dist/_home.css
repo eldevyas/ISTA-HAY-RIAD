@@ -73,6 +73,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin-bottom: 3rem;
 }
 .Home .SecondSection .MainStats {
   min-height: 100px;
@@ -125,21 +126,23 @@
   flex-wrap: wrap;
 }
 .Home .SecondSection .Cards .Card {
-  flex: 1;
   min-height: 100px;
-  height: 100%;
   border: none;
   background-color: var(--color-card-primary);
   color: var(--color-text-primary);
   padding: 2rem;
   transition: all 0.2s ease;
+  flex: 1;
+  align-self: stretch;
 }
 .Home .SecondSection .Cards .Card h1 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  opacity: 0.75;
 }
 .Home .SecondSection .Cards .Card p {
   font-size: 1rem;
+  opacity: 0.5;
 }
 .Home .SecondSection .Cards .Card:not(:nth-child(2n+1)) {
   background-color: var(--color-card-secondary);
@@ -150,8 +153,25 @@
   color: #fff;
   user-select: none;
 }
+.Home .SecondSection .Cards .Card:hover h1 {
+  opacity: 1;
+  color: #fff;
+}
+.Home .SecondSection .Cards .Card:hover p {
+  opacity: 1;
+}
 @media (max-width: 800px) {
   .Home .SecondSection .Cards .Card {
     min-width: 100%;
   }
+}
+.Home .section-formations {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }

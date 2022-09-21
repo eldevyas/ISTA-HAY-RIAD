@@ -73,6 +73,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        margin-bottom: 3rem;
         .MainStats {
             min-height: 100px;
             height: auto;
@@ -123,20 +124,24 @@
             height: auto;
             flex-wrap: wrap;
             .Card {
-                flex: 1;
                 min-height: 100px;
-                height: 100%;
+                // height: 100%;
                 border: none;
                 background-color: var(--color-card-primary);
                 color: var(--color-text-primary);
                 padding: 2rem;
                 transition: all 0.2s ease;
+                flex: 1;
+                align-self: stretch;
                 h1 {
                     font-size: 1.5rem;
                     margin-bottom: 1rem;
+                    opacity: 0.75;
+                    // color: var(--green);
                 }
                 p {
                     font-size: 1rem;
+                    opacity: 0.5;
                 }
                 &:not(:nth-child(2n+1)) {
                     background-color: var(--color-card-secondary);
@@ -147,11 +152,28 @@
                     background-color: var(--green);
                     color: #fff;
                     user-select: none;
+                    h1 {
+                        opacity: 1;
+                        color: #fff;
+                    }
+                    p {
+                        opacity: 1;
+                    }
                 }
                 @media (max-width: 800px) {
                     min-width: 100%;
                 }
             }
         }
+    }
+    .section-formations {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin: 3rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
     }
 }

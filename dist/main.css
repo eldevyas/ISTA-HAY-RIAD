@@ -469,6 +469,7 @@ body .Home .SecondSection {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin-bottom: 3rem;
 }
 body .Home .SecondSection .MainStats {
   min-height: 100px;
@@ -521,21 +522,23 @@ body .Home .SecondSection .Cards {
   flex-wrap: wrap;
 }
 body .Home .SecondSection .Cards .Card {
-  flex: 1;
   min-height: 100px;
-  height: 100%;
   border: none;
   background-color: var(--color-card-primary);
   color: var(--color-text-primary);
   padding: 2rem;
   transition: all 0.2s ease;
+  flex: 1;
+  align-self: stretch;
 }
 body .Home .SecondSection .Cards .Card h1 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  opacity: 0.75;
 }
 body .Home .SecondSection .Cards .Card p {
   font-size: 1rem;
+  opacity: 0.5;
 }
 body .Home .SecondSection .Cards .Card:not(:nth-child(2n+1)) {
   background-color: var(--color-card-secondary);
@@ -546,10 +549,27 @@ body .Home .SecondSection .Cards .Card:hover {
   color: #fff;
   user-select: none;
 }
+body .Home .SecondSection .Cards .Card:hover h1 {
+  opacity: 1;
+  color: #fff;
+}
+body .Home .SecondSection .Cards .Card:hover p {
+  opacity: 1;
+}
 @media (max-width: 800px) {
   body .Home .SecondSection .Cards .Card {
     min-width: 100%;
   }
+}
+body .Home .section-formations {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 body .About {
   width: 100%;
