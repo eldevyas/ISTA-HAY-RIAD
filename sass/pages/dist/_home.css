@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
   display: flex;
-  flex-direction: columns;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   position: relative;
@@ -10,7 +10,15 @@
 .Home .Header {
   width: 100%;
   height: auto;
+  aspect-ratio: 1920/600;
   background-color: var(--green);
+  overflow: hidden;
+  position: relative;
+}
+@media (max-width: 800px) {
+  .Home .Header {
+    aspect-ratio: 1/1;
+  }
 }
 .Home .Header .Background {
   position: absolute;
@@ -23,6 +31,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-clip: border-box;
   z-index: 1;
 }
 .Home .Header .Container {
@@ -56,4 +65,93 @@
   font-family: inherit;
   background-color: var(--blue);
   font-weight: 700;
+}
+.Home .SecondSection {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.Home .SecondSection .MainStats {
+  min-height: 100px;
+  height: auto;
+  width: 100%;
+  background-color: var(--color-bg-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.Home .SecondSection .MainStats .Column {
+  height: auto;
+  padding: 50px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.Home .SecondSection .MainStats .Column > * {
+  text-align: center;
+}
+.Home .SecondSection .MainStats .Column .Icon {
+  font-size: 3.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-secondary);
+  opacity: 0.75;
+}
+.Home .SecondSection .MainStats .Column .Number {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--green);
+  margin-bottom: 1rem;
+}
+.Home .SecondSection .MainStats .Column .Title {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  font-weight: 700;
+  opacity: 0.75;
+}
+.Home .SecondSection .Cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+}
+.Home .SecondSection .Cards .Card {
+  flex: 1;
+  min-height: 100px;
+  height: 100%;
+  border: none;
+  background-color: var(--color-card-primary);
+  color: var(--color-text-primary);
+  padding: 2rem;
+  transition: all 0.2s ease;
+}
+.Home .SecondSection .Cards .Card h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.Home .SecondSection .Cards .Card p {
+  font-size: 1rem;
+}
+.Home .SecondSection .Cards .Card:not(:nth-child(2n+1)) {
+  background-color: var(--color-card-secondary);
+}
+.Home .SecondSection .Cards .Card:hover {
+  cursor: pointer;
+  background-color: var(--green);
+  color: #fff;
+  user-select: none;
+}
+@media (max-width: 800px) {
+  .Home .SecondSection .Cards .Card {
+    min-width: 100%;
+  }
 }

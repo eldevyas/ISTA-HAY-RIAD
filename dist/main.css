@@ -3,13 +3,15 @@ html[data-theme=light] {
   --blue: #29abe1;
   --green: #39b549;
   --color-text-primary: rgba(#000, 0.5);
-  --color-text-secondary: #076963;
+  --color-text-secondary: rgba(#000, 0.25);
   --color-bg-primary: #fcfcfc;
   --color-bg-secondary: #050505;
   --color-bg-toggle: #1e90ff;
   --footer-background-color: #f2F2F2;
   --scrollbar-thumb-color: rgba(#000, 1);
   --scrollbar-track-color: rgba(#fff, 1);
+  --color-card-primary: #f4fafd;
+  --color-card-secondary: #e9f6fc;
 }
 
 body[data-theme=dark],
@@ -17,7 +19,7 @@ html[data-theme=dark] {
   --blue: #4e9bbb;
   --green: #41ac4f;
   --color-text-primary: #e3e3e3;
-  --color-text-secondary: #ff6b00;
+  --color-text-secondary: rgba(#fff, 0.25);
   --color-bg-primary: #041a22;
   --color-bg-secondary: #fcfcfc;
   --color-bg-toggle: #a9a9a9;
@@ -25,6 +27,8 @@ html[data-theme=dark] {
   --footer-text-color: #e3e3e3;
   --scrollbar-thumb-color: rgba(#fff, 1);
   --scrollbar-track-color: rgba(#000, 1);
+  --color-card-primary: #0e1f26;
+  --color-card-secondary: #162f39;
 }
 
 html,
@@ -394,7 +398,7 @@ body .Home {
   width: 100%;
   height: auto;
   display: flex;
-  flex-direction: columns;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   position: relative;
@@ -402,7 +406,15 @@ body .Home {
 body .Home .Header {
   width: 100%;
   height: auto;
+  aspect-ratio: 1920/600;
   background-color: var(--green);
+  overflow: hidden;
+  position: relative;
+}
+@media (max-width: 800px) {
+  body .Home .Header {
+    aspect-ratio: 1/1;
+  }
 }
 body .Home .Header .Background {
   position: absolute;
@@ -415,6 +427,7 @@ body .Home .Header .Background {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-clip: border-box;
   z-index: 1;
 }
 body .Home .Header .Container {
@@ -448,6 +461,95 @@ body .Home .Header .Container .Button {
   font-family: inherit;
   background-color: var(--blue);
   font-weight: 700;
+}
+body .Home .SecondSection {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+body .Home .SecondSection .MainStats {
+  min-height: 100px;
+  height: auto;
+  width: 100%;
+  background-color: var(--color-bg-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+body .Home .SecondSection .MainStats .Column {
+  height: auto;
+  padding: 50px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+body .Home .SecondSection .MainStats .Column > * {
+  text-align: center;
+}
+body .Home .SecondSection .MainStats .Column .Icon {
+  font-size: 3.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-secondary);
+  opacity: 0.75;
+}
+body .Home .SecondSection .MainStats .Column .Number {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--green);
+  margin-bottom: 1rem;
+}
+body .Home .SecondSection .MainStats .Column .Title {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  font-weight: 700;
+  opacity: 0.75;
+}
+body .Home .SecondSection .Cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+}
+body .Home .SecondSection .Cards .Card {
+  flex: 1;
+  min-height: 100px;
+  height: 100%;
+  border: none;
+  background-color: var(--color-card-primary);
+  color: var(--color-text-primary);
+  padding: 2rem;
+  transition: all 0.2s ease;
+}
+body .Home .SecondSection .Cards .Card h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+body .Home .SecondSection .Cards .Card p {
+  font-size: 1rem;
+}
+body .Home .SecondSection .Cards .Card:not(:nth-child(2n+1)) {
+  background-color: var(--color-card-secondary);
+}
+body .Home .SecondSection .Cards .Card:hover {
+  cursor: pointer;
+  background-color: var(--green);
+  color: #fff;
+  user-select: none;
+}
+@media (max-width: 800px) {
+  body .Home .SecondSection .Cards .Card {
+    min-width: 100%;
+  }
 }
 body .About {
   width: 100%;
