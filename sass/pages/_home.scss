@@ -210,6 +210,10 @@
                 user-select: none;
                 padding: 2rem;
                 overflow: hidden;
+                transition: all 300ms ease;
+                &:hover {
+                    background-size: 200%;
+                }
                 .overlay {
                     position: absolute;
                     width: 100%;

@@ -606,6 +606,10 @@ body .Home .section-formations .FormationCards .FormationCard {
   user-select: none;
   padding: 2rem;
   overflow: hidden;
+  transition: all 300ms ease;
+}
+body .Home .section-formations .FormationCards .FormationCard:hover {
+  background-size: 200%;
 }
 body .Home .section-formations .FormationCards .FormationCard .overlay {
   position: absolute;
