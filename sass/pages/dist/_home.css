@@ -148,7 +148,6 @@
   background-color: var(--color-card-secondary);
 }
 .Home .SecondSection .Cards .Card:hover {
-  cursor: pointer;
   background-color: var(--green);
   color: #fff;
   user-select: none;

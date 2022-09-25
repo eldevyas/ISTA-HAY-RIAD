@@ -45,7 +45,6 @@ function SwitchTheme(e) {
         document.documentElement.setAttribute("data-theme", "light");
         localStorage.setItem("theme", document.documentElement.getAttribute("data-theme"));
     }
-
 };
 
 

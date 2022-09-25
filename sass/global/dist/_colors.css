@@ -12,6 +12,8 @@ html[data-theme=light] {
   --scrollbar-track-color: rgba(#fff, 1);
   --color-card-primary: #f4fafd;
   --color-card-secondary: #e9f6fc;
+  --card-bg-primary: #fff;
+  --card-border-color: rgba(0, 0, 0, 0.1);
 }
 
 body[data-theme=dark],
@@ -29,4 +31,6 @@ html[data-theme=dark] {
   --scrollbar-track-color: rgba(#000, 1);
   --color-card-primary: #0e1f26;
   --color-card-secondary: #162f39;
+  --card-bg-primary: #0e1f26;
+  --card-border-color: rgba(255, 255, 255, 0.1);
 }

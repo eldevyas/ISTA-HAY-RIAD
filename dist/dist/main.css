@@ -3,13 +3,15 @@ html[data-theme=light] {
   --blue: #29abe1;
   --green: #39b549;
   --color-text-primary: rgba(#000, 0.5);
-  --color-text-secondary: #076963;
+  --color-text-secondary: rgba(#000, 0.25);
   --color-bg-primary: #fcfcfc;
   --color-bg-secondary: #050505;
   --color-bg-toggle: #1e90ff;
   --footer-background-color: #f2F2F2;
   --scrollbar-thumb-color: rgba(#000, 1);
   --scrollbar-track-color: rgba(#fff, 1);
+  --color-card-primary: #f4fafd;
+  --color-card-secondary: #e9f6fc;
 }
 
 body[data-theme=dark],
@@ -17,7 +19,7 @@ html[data-theme=dark] {
   --blue: #4e9bbb;
   --green: #41ac4f;
   --color-text-primary: #e3e3e3;
-  --color-text-secondary: #ff6b00;
+  --color-text-secondary: rgba(#fff, 0.25);
   --color-bg-primary: #041a22;
   --color-bg-secondary: #fcfcfc;
   --color-bg-toggle: #a9a9a9;
@@ -25,6 +27,8 @@ html[data-theme=dark] {
   --footer-text-color: #e3e3e3;
   --scrollbar-thumb-color: rgba(#fff, 1);
   --scrollbar-track-color: rgba(#000, 1);
+  --color-card-primary: #0e1f26;
+  --color-card-secondary: #162f39;
 }
 
 html,
@@ -444,11 +448,297 @@ body .Footer .FooterInfo {
 
 body .Home {
   width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+body .Home .Header {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1920/600;
+  background-color: var(--green);
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 800px) {
+  body .Home .Header {
+    aspect-ratio: 1/1;
+  }
+}
+body .Home .Header .Background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  background-image: url("/BG-Image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: border-box;
+  z-index: 1;
+}
+
+body .Home .Header .Container {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 5;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+body .Home .Header .Container .Text h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  max-width: 650px;
+  color: #fcfcfc;
+}
+
+body .Home .Header .Container .Text p {
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 650px;
+}
+
+body .Home .Header .Container .Button {
+  color: #fff;
+  font-family: inherit;
+  background-color: var(--blue);
+  font-weight: 700;
+}
+
+body .Home .SecondSection {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+body .Home .SecondSection .MainStats {
+  min-height: 100px;
+  height: auto;
+  width: 100%;
+  background-color: var(--color-bg-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+body .Home .SecondSection .MainStats .Column {
+  height: auto;
+  padding: 50px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+body .Home .SecondSection .MainStats .Column > * {
+  text-align: center;
+}
+
+body .Home .SecondSection .MainStats .Column .Icon {
+  font-size: 3.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-secondary);
+  opacity: 0.75;
+}
+
+body .Home .SecondSection .MainStats .Column .Number {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--green);
+  margin-bottom: 1rem;
+}
+
+body .Home .SecondSection .MainStats .Column .Title {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  font-weight: 700;
+  opacity: 0.75;
+}
+
+body .Home .SecondSection .Cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+}
+
+body .Home .SecondSection .Cards .Card {
+  min-height: 100px;
+  border: none;
+  background-color: var(--color-card-primary);
+  color: var(--color-text-primary);
+  padding: 2rem;
+  transition: all 0.2s ease;
+  flex: 1;
+  align-self: stretch;
+}
+
+body .Home .SecondSection .Cards .Card h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.75;
+}
+
+body .Home .SecondSection .Cards .Card p {
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+body .Home .SecondSection .Cards .Card:not(:nth-child(2n+1)) {
+  background-color: var(--color-card-secondary);
+}
+
+body .Home .SecondSection .Cards .Card:hover {
+  cursor: pointer;
+  background-color: var(--green);
+  color: #fff;
+  user-select: none;
+}
+
+body .Home .SecondSection .Cards .Card:hover h1 {
+  opacity: 1;
+  color: #fff;
+}
+
+body .Home .SecondSection .Cards .Card:hover p {
+  opacity: 1;
+}
+
+@media (max-width: 800px) {
+  body .Home .SecondSection .Cards .Card {
+    min-width: 100%;
+  }
+}
+body .Home .section-formations {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+body .Home .section-formations h1 {
+  font-size: 1.75rem;
+}
+
+body .Home .section-formations .FormationCards {
+  width: 100%;
+  height: auto;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 50px;
+  gap: 2rem;
+}
+
+body .Home .section-formations .FormationCards .FormationCard {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  min-width: 250px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--blue);
+  margin-top: 2rem;
+  border-radius: 0rem;
+  color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  user-select: none;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+body .Home .section-formations .FormationCards .FormationCard .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(0rem) brightness(30%);
+  z-index: 0;
+}
+
+body .Home .section-formations .FormationCards .FormationCard .topSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1rem;
+  z-index: 1;
+}
+
+body .Home .section-formations .FormationCards .FormationCard .topSide h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+body .Home .section-formations .FormationCards .FormationCard .topSide p {
+  font-size: 0.85rem;
+  font-weight: 100;
+}
+
+body .Home .section-formations .FormationCards .FormationCard .bottomSide {
+  z-index: 1;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+body .Home .section-formations .FormationCards .FormationCard .ActionArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+
+body .About {
+  width: 100%;
   max-width: 100vw;
   height: 100%;
 }
 
-body .Home .HomeContent {
+body .About .AboutContent {
   width: 100%;
   min-height: 1000px;
   padding: 30px 30px;
@@ -458,7 +748,7 @@ body .Home .HomeContent {
   align-items: center;
 }
 
-body .Home .HomeContent .Container {
+body .About .AboutContent .Container {
   position: relative;
   height: auto;
   width: 60%;
@@ -469,11 +759,11 @@ body .Home .HomeContent .Container {
 }
 
 @media screen and (max-width: 767px) {
-  body .Home .HomeContent .Container {
+  body .About .AboutContent .Container {
     width: 100%;
   }
 }
-body .Home .HomeContent p {
+body .About .AboutContent p {
   width: 100%;
   height: auto;
   padding: 0 0px;
@@ -484,18 +774,18 @@ body .Home .HomeContent p {
   font-weight: 500;
 }
 
-body .Home .HomeContent p br {
+body .About .AboutContent p br {
   display: block;
   margin: 10px 0;
   margin-bottom: 2em;
 }
 
 @media (max-width: 767px) {
-  body .Home .HomeContent p {
+  body .About .AboutContent p {
     padding: 0 0px;
   }
 }
-body .Home .HomeContent .Image {
+body .About .AboutContent .Image {
   position: relative;
   width: 100%;
   height: auto;
@@ -503,10 +793,16 @@ body .Home .HomeContent .Image {
   border-radius: 20px;
 }
 
-body .Home .HomeContent .Image img {
+body .About .AboutContent .Image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+body .FormationsPage {
+  width: 100%;
+  height: 300px;
+  background-color: red;
 }
 
 body {
