@@ -3,6 +3,7 @@ import ReadMoreIcon from '@mui/icons-material/ReadMore'
 import Card from './interface/card'
 
 
+
 const Cards = [
     {
         title: 'Développement Digitale',
@@ -40,6 +41,8 @@ const Cards = [
 ]
 
 export default function FormationsPage() {
+
+
     return (
             <div className="FormationsPage">
                <div className="FormationsCards">

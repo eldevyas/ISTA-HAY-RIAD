@@ -19,13 +19,13 @@
             background-color: var(--card-bg-primary);
             border: 1px solid var(--card-border-color);
             min-height: 300px;
-            border-radius: 20px;
+            border-radius: 0px;
             flex-grow: 1;
             width: 100%;
             overflow: hidden;
             &:hover {
-                filter: brightness(1.25);
                 cursor: pointer;
+                background-color: var(--card-bg-primary-hover);
             }
             .TopImage {
                 width: 100%;
@@ -49,11 +49,13 @@
                     height: auto;
                     margin-bottom: 1rem;
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
+                    flex-wrap: wrap;
                     justify-content: flex-start;
-                    align-items: flex-start;
+                    align-items: center;
                     gap: 0.5rem;
                     .Chip {
+                        border-radius: 0px;
                         color: var(--color-text-primary);
                         font-family: inherit;
                         font-weight: 600;
@@ -103,10 +105,11 @@
                 max-height: 500px;
                 overflow: hidden;
                 overflow-x: hidden;
+                border: 1px solid var(--card-border-color);
                 &::-webkit-scrollbar {
                     display: none;
                 }
-                border-radius: 20px;
+                border-radius: 0px;
                 background-color: var(--card-bg-primary);
                 z-index: 1000;
                 .TopImage {
@@ -134,14 +137,16 @@
                         height: auto;
                         margin-bottom: 1rem;
                         display: flex;
-                        flex-direction: column;
+                        flex-direction: row;
+                        flex-wrap: wrap;
                         justify-content: flex-start;
-                        align-items: flex-start;
+                        align-items: center;
                         gap: 0.5rem;
                         .Chip {
                             color: var(--color-text-primary);
                             font-family: inherit;
                             font-weight: 600;
+                            border-radius: 0px;
                             &:nth-child(1n+1) {
                                 background-color: var(--blue);
                                 border-color: transparent;
@@ -169,5 +174,6 @@
         border-color: var(--green);
         font-family: inherit;
         z-index: 1 !important;
+        border-radius: 0px;
     }
 }

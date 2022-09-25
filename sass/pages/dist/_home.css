@@ -42,7 +42,7 @@
   position: relative;
   top: 0;
   left: 0;
-  padding: 2rem 2rem;
+  padding: 50px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,10 +61,12 @@
   max-width: 650px;
 }
 .Home .Header .Container .Button {
-  color: #fff;
-  font-family: inherit;
+  color: var(--color-text-primary);
+  border-color: var(--color-text-primary);
   background-color: var(--blue);
+  font-family: inherit;
   font-weight: 700;
+  border-radius: 0px;
 }
 .Home .SecondSection {
   width: 100%;
@@ -199,7 +201,6 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background-color: var(--blue);
   margin-top: 2rem;
   border-radius: 0rem;
   color: #fff;
@@ -209,15 +210,29 @@
   user-select: none;
   padding: 2rem;
   overflow: hidden;
+  border: 1px solid var(--card-border-color);
 }
-.Home .section-formations .FormationCards .FormationCard .overlay {
+.Home .section-formations .FormationCards .FormationCard:hover .background::after {
+  backdrop-filter: blur(20px) brightness(75%);
+}
+.Home .section-formations .FormationCards .FormationCard .background {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  backdrop-filter: blur(0rem) brightness(30%);
   z-index: 0;
+}
+.Home .section-formations .FormationCards .FormationCard .background::after {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  backdrop-filter: blur(0px) brightness(50%);
 }
 .Home .section-formations .FormationCards .FormationCard .topSide {
   display: flex;

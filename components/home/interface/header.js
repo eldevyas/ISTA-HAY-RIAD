@@ -1,6 +1,13 @@
 import Button from '@mui/material/Button';
+import {useRouter} from 'next/router';
 
 export default function Header() {
+    const router = useRouter();
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        router.push("/contact")
+    }
     return (
         <>
             <div className="Header">
@@ -13,7 +20,7 @@ export default function Header() {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et turpis congue, lacinia odio sed
                         </p>
                     </div>
-                    <Button variant="contained" className="Button">Contactez-nous</Button>
+                    <Button variant="outlined" className="Button" onClick={handleClick}>Contactez-nous</Button>
                 </div>
             </div>
         </>

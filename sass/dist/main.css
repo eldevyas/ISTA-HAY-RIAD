@@ -12,6 +12,8 @@ html[data-theme=light] {
   --scrollbar-track-color: rgba(#fff, 1);
   --color-card-primary: #f4fafd;
   --color-card-secondary: #e9f6fc;
+  --card-bg-primary: #fff;
+  --card-border-color: rgba(0, 0, 0, 0.1);
 }
 
 body[data-theme=dark],
@@ -29,6 +31,8 @@ html[data-theme=dark] {
   --scrollbar-track-color: rgba(#000, 1);
   --color-card-primary: #0e1f26;
   --color-card-secondary: #162f39;
+  --card-bg-primary: #0e1f26;
+  --card-border-color: rgba(255, 255, 255, 0.1);
 }
 
 html,
@@ -36,6 +40,23 @@ body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  /* width of the entire scrollbar */
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+  background: var(--scrollbar-track-color);
+  /* color of the tracking area */
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 0px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--blue);
 }
 
 body::-webkit-scrollbar {
@@ -77,6 +98,9 @@ body {
 body .NavBar {
   width: 100%;
   height: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 body .NavBar .UpperBar {
   width: 100%;
@@ -178,13 +202,15 @@ body .NavBar .UpperBar .Empty .Inside input:checked + .slider:before {
   box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
 }
 body .NavBar .BottomBar {
-  position: relative;
   height: auto;
   background: transparent;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  position: sticky !important;
+  top: 50px;
+  left: 30px;
 }
 body .NavBar .BottomBar .ButtonGroup {
   position: relative;
@@ -544,7 +570,6 @@ body .Home .SecondSection .Cards .Card:not(:nth-child(2n+1)) {
   background-color: var(--color-card-secondary);
 }
 body .Home .SecondSection .Cards .Card:hover {
-  cursor: pointer;
   background-color: var(--green);
   color: #fff;
   user-select: none;
@@ -710,8 +735,177 @@ body .About .AboutContent .Image img {
 }
 body .FormationsPage {
   width: 100%;
-  height: 300px;
-  background-color: red;
+  height: auto;
+  background-color: var(--color-bg-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px 50px;
+}
+body .FormationsPage .FormationsCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  grid-auto-rows: 1fr;
+  width: 100%;
+  min-height: 300px;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+body .FormationsPage .FormationsCards .normal-card {
+  background-color: var(--card-bg-primary);
+  border: 1px solid var(--card-border-color);
+  min-height: 300px;
+  border-radius: 0px;
+  flex-grow: 1;
+  width: 100%;
+  overflow: hidden;
+}
+body .FormationsPage .FormationsCards .normal-card:hover {
+  filter: brightness(1.25);
+  cursor: pointer;
+}
+body .FormationsPage .FormationsCards .normal-card .TopImage {
+  width: 100%;
+  height: 150px;
+  background-color: var(--blue);
+  position: relative;
+}
+body .FormationsPage .FormationsCards .normal-card .BottomContent {
+  padding: 15px 25px;
+}
+body .FormationsPage .FormationsCards .normal-card .BottomContent h1 {
+  color: var(--blue);
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 1rem;
+}
+body .FormationsPage .FormationsCards .normal-card .BottomContent p {
+  margin-bottom: 1rem;
+}
+body .FormationsPage .FormationsCards .normal-card .BottomContent .Chips {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+body .FormationsPage .FormationsCards .normal-card .BottomContent .Chips .Chip {
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-weight: 600;
+}
+body .FormationsPage .FormationsCards .normal-card .BottomContent .Chips .Chip:nth-child(1n+1) {
+  background-color: var(--blue);
+  border-color: transparent;
+  color: var(--card-bg-primary);
+}
+body .FormationsPage .FormationsCards .normal-card .BottomContent .Chips .Chip:nth-child(2n+2) {
+  background-color: var(--card-bg-primary);
+  border-color: var(--color-text-primary);
+  color: var(--color-bg-secondary);
+}
+body .FormationsPage .FormationsCards .normal-card .BottomContent .Chips .Chip:nth-child(3n+3) {
+  background-color: var(--green);
+  border-color: transparent;
+  color: var(--card-bg-primary);
+}
+body .FormationsPage .FormationsCards .expanded-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: brightness(0.5) blur(5px);
+}
+body .FormationsPage .FormationsCards .expanded-background .Outside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+body .FormationsPage .FormationsCards .expanded-background .expanded-card {
+  max-width: 90%;
+  min-height: 300px;
+  height: auto;
+  max-height: 500px;
+  overflow: hidden;
+  overflow-x: hidden;
+  border: 1px solid var(--card-border-color);
+  border-radius: 0px;
+  background-color: var(--card-bg-primary);
+  z-index: 1000;
+}
+body .FormationsPage .FormationsCards .expanded-background .expanded-card::-webkit-scrollbar {
+  display: none;
+}
+body .FormationsPage .FormationsCards .expanded-background .expanded-card .TopImage {
+  width: 100%;
+  height: 100px;
+  background-color: var(--blue);
+  position: relative;
+}
+body .FormationsPage .FormationsCards .expanded-background .expanded-card .BottomContent {
+  padding: 15px 25px;
+}
+body .FormationsPage .FormationsCards .expanded-background .expanded-card .BottomContent h1 {
+  color: var(--blue);
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 1rem;
+}
+body .FormationsPage .FormationsCards .expanded-background .expanded-card .BottomContent p {
+  margin-bottom: 1rem;
+  max-height: 150px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+body .FormationsPage .FormationsCards .expanded-background .expanded-card .BottomContent .Chips {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+body .FormationsPage .FormationsCards .expanded-background .expanded-card .BottomContent .Chips .Chip {
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-weight: 600;
+}
+body .FormationsPage .FormationsCards .expanded-background .expanded-card .BottomContent .Chips .Chip:nth-child(1n+1) {
+  background-color: var(--blue);
+  border-color: transparent;
+  color: var(--card-bg-primary);
+}
+body .FormationsPage .FormationsCards .expanded-background .expanded-card .BottomContent .Chips .Chip:nth-child(2n+2) {
+  background-color: var(--card-bg-primary);
+  border-color: var(--color-text-primary);
+  color: var(--color-bg-secondary);
+}
+body .FormationsPage .FormationsCards .expanded-background .expanded-card .BottomContent .Chips .Chip:nth-child(3n+3) {
+  background-color: var(--green);
+  border-color: transparent;
+  color: var(--card-bg-primary);
+}
+body .FormationsPage .ReadMore {
+  width: max-content;
+  color: var(--green);
+  border-color: var(--green);
+  font-family: inherit;
+  z-index: 1 !important;
 }
 
 body {

@@ -1,13 +1,24 @@
 import Button from '@mui/material/Button';
-
-
+import { useRouter } from 'next/router';
+import Image from "next/image";
 
 
 function Card(props) {
+
+    const router = useRouter()
+
+    const handleClick = (e) => {
+        e.preventDefault()
+        router.push('/formations');
+    }
     return(
         <>
-            <div className="FormationCard" style={{ backgroundImage: `url("${props.Image}")`}}>
-                <div className="overlay"></div>
+            <div className="FormationCard">
+                <div className="background">
+                    <Image src={props.Image} layout="fill" objectFit="cover"/>
+                </div>
+
+
 
                 <div></div>
 
@@ -22,7 +33,7 @@ function Card(props) {
                     <p>Savoir Plus</p>
                 </div>
 
-                <Button variant="text" className="ActionArea"></Button>
+                <Button variant="text" className="ActionArea" onClick={handleClick}></Button>
             </div>
         </>
     );
