@@ -10,20 +10,22 @@
 }
 .FormationsPage .FormationsCards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(275px, 2fr));
   grid-auto-rows: 1fr;
   width: 100%;
   min-height: 300px;
   gap: 2rem;
   margin-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
 }
 .FormationsPage .FormationsCards .normal-card {
+  position: relative;
   background-color: var(--card-bg-primary);
   border: 1px solid var(--card-border-color);
   min-height: 300px;
   border-radius: 0px;
-  flex-grow: 1;
-  width: 100%;
+  max-width: 100%;
   overflow: hidden;
 }
 .FormationsPage .FormationsCards .normal-card:hover {

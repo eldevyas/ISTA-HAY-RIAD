@@ -41,7 +41,7 @@ export default function Footer() {
 
                         <div className = "SocialIcons">
                             <SocialIcon url="https://twitter.com/yassine_ct" target="_blank" rel="noopener noreferrer" />
-                            <SocialIcon url="https://facebook.com/yassibe.cth" target="_blank" rel="noopener noreferrer" />
+                            <SocialIcon url="https://facebook.com/yassine.cth" target="_blank" rel="noopener noreferrer" />
                             <SocialIcon url="https://github.com/yassine-ct"  target="_blank" rel="noopener noreferrer" />
                         </div>
                     </div>
@@ -49,7 +49,7 @@ export default function Footer() {
 
                 <div className = "FooterInfo">
                     <p>
-                        Copyright ©2022 | Conçu à Figma par <strong>Mouad El Asri</strong> - Développé par <strong>Yassine Chettouch</strong> & <strong>Ayoub Boufous</strong>
+                        Copyright ©2022 | Développé par <strong>Yassine Chettouch</strong> et <strong>Ayoub Boufous</strong>
                     </p>
                 </div>
             </div>
