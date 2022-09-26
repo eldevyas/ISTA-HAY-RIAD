@@ -50,10 +50,11 @@ export default function FormationsPage() {
                         <Card key={index} title={card.title} description={card.description} image={card.image} chips={card.chips}/>
                     ) )}
                 </div> 
-
-                <Button variant="outlined" className="ReadMore" startIcon={<ReadMoreIcon />}>
-                    Afficher Plus
-                </Button>
+                <div className="ButtonGrid">
+                    <Button variant="outlined" className="ReadMore" startIcon={<ReadMoreIcon />}>
+                        Afficher Plus
+                    </Button>
+                </div>
             </div>
     );
 }

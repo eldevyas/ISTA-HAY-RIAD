@@ -13,6 +13,7 @@ html[data-theme=light] {
   --color-card-primary: #f4fafd;
   --color-card-secondary: #e9f6fc;
   --card-bg-primary: #fff;
+  --card-bg-primary-hover: #F2F2F2;
   --card-border-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -32,6 +33,7 @@ html[data-theme=dark] {
   --color-card-primary: #0e1f26;
   --color-card-secondary: #162f39;
   --card-bg-primary: #0e1f26;
+  --card-bg-primary-hover: #16303b;
   --card-border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -464,7 +466,7 @@ body .Home .Header .Container {
   position: relative;
   top: 0;
   left: 0;
-  padding: 2rem 2rem;
+  padding: 50px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -483,10 +485,12 @@ body .Home .Header .Container .Text p {
   max-width: 650px;
 }
 body .Home .Header .Container .Button {
-  color: #fff;
-  font-family: inherit;
+  color: var(--color-text-primary);
+  border-color: var(--color-text-primary);
   background-color: var(--blue);
+  font-family: inherit;
   font-weight: 700;
+  border-radius: 0px;
 }
 body .Home .SecondSection {
   width: 100%;
@@ -621,7 +625,6 @@ body .Home .section-formations .FormationCards .FormationCard {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background-color: var(--blue);
   margin-top: 2rem;
   border-radius: 0rem;
   color: #fff;
@@ -631,15 +634,29 @@ body .Home .section-formations .FormationCards .FormationCard {
   user-select: none;
   padding: 2rem;
   overflow: hidden;
+  border: 1px solid var(--card-border-color);
 }
-body .Home .section-formations .FormationCards .FormationCard .overlay {
+body .Home .section-formations .FormationCards .FormationCard:hover .background::after {
+  backdrop-filter: blur(20px) brightness(75%);
+}
+body .Home .section-formations .FormationCards .FormationCard .background {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  backdrop-filter: blur(0rem) brightness(30%);
   z-index: 0;
+}
+body .Home .section-formations .FormationCards .FormationCard .background::after {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  backdrop-filter: blur(0px) brightness(50%);
 }
 body .Home .section-formations .FormationCards .FormationCard .topSide {
   display: flex;
@@ -745,25 +762,27 @@ body .FormationsPage {
 }
 body .FormationsPage .FormationsCards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(275px, 2fr));
   grid-auto-rows: 1fr;
   width: 100%;
   min-height: 300px;
   gap: 2rem;
   margin-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
 }
 body .FormationsPage .FormationsCards .normal-card {
+  position: relative;
   background-color: var(--card-bg-primary);
   border: 1px solid var(--card-border-color);
   min-height: 300px;
   border-radius: 0px;
-  flex-grow: 1;
-  width: 100%;
+  max-width: 100%;
   overflow: hidden;
 }
 body .FormationsPage .FormationsCards .normal-card:hover {
-  filter: brightness(1.25);
   cursor: pointer;
+  background-color: var(--card-bg-primary-hover);
 }
 body .FormationsPage .FormationsCards .normal-card .TopImage {
   width: 100%;
@@ -788,12 +807,14 @@ body .FormationsPage .FormationsCards .normal-card .BottomContent .Chips {
   height: auto;
   margin-bottom: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.5rem;
 }
 body .FormationsPage .FormationsCards .normal-card .BottomContent .Chips .Chip {
+  border-radius: 0px;
   color: var(--color-text-primary);
   font-family: inherit;
   font-weight: 600;
@@ -875,15 +896,17 @@ body .FormationsPage .FormationsCards .expanded-background .expanded-card .Botto
   height: auto;
   margin-bottom: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.5rem;
 }
 body .FormationsPage .FormationsCards .expanded-background .expanded-card .BottomContent .Chips .Chip {
   color: var(--color-text-primary);
   font-family: inherit;
   font-weight: 600;
+  border-radius: 0px;
 }
 body .FormationsPage .FormationsCards .expanded-background .expanded-card .BottomContent .Chips .Chip:nth-child(1n+1) {
   background-color: var(--blue);
@@ -906,6 +929,12 @@ body .FormationsPage .ReadMore {
   border-color: var(--green);
   font-family: inherit;
   z-index: 1 !important;
+  border-radius: 0px;
+}
+body .EspaceStagiaires {
+  background-color: red;
+  width: 100%;
+  height: 1000px;
 }
 
 body {
