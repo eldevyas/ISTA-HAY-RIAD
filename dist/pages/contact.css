@@ -1,0 +1,45 @@
+.contact-page {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px;
+  grid-gap: 1rem;
+}
+.contact-page .contact-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  grid-template-rows: 1fr;
+  grid-gap: 1rem;
+}
+.contact-page .contact-cards .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  gap: 1rem;
+  background-color: var(--card-bg-primary);
+  border: 1px solid var(--card-border-color);
+}
+.contact-page .contact-cards .card:hover {
+  background-color: var(--card-bg-primary-hover);
+}
+.contact-page .contact-cards .card h1 {
+  font-size: 1.25rem;
+  color: var(--green);
+}
+.contact-page .contact-cards .card p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  opacity: 0.75;
+}
+.contact-page .Map {
+  width: 100%;
+  height: 500px;
+}
+
+/*# sourceMappingURL=contact.css.map */

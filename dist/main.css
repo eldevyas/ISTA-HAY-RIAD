@@ -8,9 +8,9 @@ html[data-theme=light] {
   --color-bg-secondary: #050505;
   --color-bg-toggle: #1e90ff;
   --footer-background-color: #f2F2F2;
-  --scrollbar-thumb-color: rgba(#000, 1);
-  --scrollbar-track-color: rgba(#fff, 1);
-  --color-card-primary: #f4fafd;
+  --scrollbar-thumb-color: #9addff;
+  --scrollbar-track-color: #e9f6fc;
+  --color-card-primary: #daf2fe;
   --color-card-secondary: #e9f6fc;
   --card-bg-primary: #fff;
   --card-bg-primary-hover: #F2F2F2;
@@ -28,8 +28,8 @@ html[data-theme=dark] {
   --color-bg-toggle: #a9a9a9;
   --footer-background-color: #151515;
   --footer-text-color: #e3e3e3;
-  --scrollbar-thumb-color: rgba(#fff, 1);
-  --scrollbar-track-color: rgba(#000, 1);
+  --scrollbar-thumb-color: #16303b;
+  --scrollbar-track-color: #0e1f26;
   --color-card-primary: #0e1f26;
   --color-card-secondary: #162f39;
   --card-bg-primary: #0e1f26;
@@ -928,24 +928,193 @@ body .FormationsPage .ButtonGrid {
   grid-template-columns: repeat(auto-fit, minmax(275px, 2fr));
   grid-auto-rows: 1fr;
   width: 100%;
-  gap: 2rem;
+  gap: 0 2rem;
   margin-bottom: 2rem;
   overflow: hidden;
   position: relative;
 }
+body .FormationsPage .ButtonGrid > div {
+  display: block;
+  height: 0;
+}
 body .FormationsPage .ButtonGrid .ReadMore {
-  width: auto;
   color: var(--green);
   border-color: var(--green);
   font-family: inherit;
   z-index: 1 !important;
   border-radius: 0px;
   background-color: var(--card-bg-primary);
+  max-width: 100%;
 }
 body .EspaceStagiaires {
-  background-color: red;
+  background-color: transparent;
   width: 100%;
-  height: 1000px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+body .EspaceStagiaires .EspaceHeader {
+  width: 100%;
+  min-height: 300px;
+  background-color: var(--card-bg-primary);
+  margin-bottom: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .EspaceStagiaires .EspaceHeader .Background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--blue);
+}
+body .EspaceStagiaires .EspaceHeader .Background::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  content: "";
+  backdrop-filter: blur(0.2rem) brightness(50%);
+}
+body .EspaceStagiaires .EspaceHeader .Content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  align-items: center;
+  gap: 2rem;
+}
+body .EspaceStagiaires .EspaceHeader .Content h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+body .EspaceStagiaires .EspaceHeader .Content #demo-select-small {
+  color: #fff;
+  border-color: #fff;
+  border: none;
+  font-family: inherit;
+}
+body .EspaceStagiaires .EspaceHeader .Content .MuiSelect-icon {
+  color: #fff;
+}
+body .EspaceStagiaires .EspaceHeader .Content .MuiOutlinedInput-notchedOutline {
+  color: #fff;
+  border-color: #fff;
+  border-radius: 0px;
+}
+body .EspaceStagiaires .EspaceHeader .Content .MuiList-root {
+  background-color: var(--card-bg-primary);
+  background-color: red;
+}
+body .EspaceStagiaires .EspaceHeader .Content .MuiPaper-root {
+  background-color: var(--card-bg-primary);
+  background-color: red;
+}
+body .EspaceStagiaires .EspaceSites {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px;
+  gap: 2rem;
+}
+body .EspaceStagiaires .EspaceSites h1 {
+  font-size: 1.5rem;
+  color: var(--blue);
+}
+body .EspaceStagiaires .EspaceSites .EspaceSites-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  gap: 1rem;
+  height: auto;
+}
+body .EspaceStagiaires .EspaceSites .EspaceSites-list .Site {
+  width: 100%;
+  background-color: var(--card-bg-primary);
+  border: 1px solid var(--card-border-color);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+body .EspaceStagiaires .EspaceSites .EspaceSites-list .Site h1 {
+  font-size: 1.25rem;
+  color: var(--green);
+}
+body .EspaceStagiaires .EspaceSites .EspaceSites-list .Site p {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+body .EspaceStagiaires .EspaceSites .EspaceSites-list .Site:hover {
+  cursor: pointer;
+  background-color: var(--card-bg-primary-hover);
+}
+body .contact-page {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px;
+  grid-gap: 1rem;
+}
+body .contact-page .contact-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  grid-template-rows: 1fr;
+  grid-gap: 1rem;
+}
+body .contact-page .contact-cards .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  gap: 1rem;
+  background-color: var(--card-bg-primary);
+  border: 1px solid var(--card-border-color);
+}
+body .contact-page .contact-cards .card:hover {
+  background-color: var(--card-bg-primary-hover);
+}
+body .contact-page .contact-cards .card h1 {
+  font-size: 1.25rem;
+  color: var(--green);
+}
+body .contact-page .contact-cards .card p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  opacity: 0.75;
+}
+body .contact-page .Map {
+  width: 100%;
+  height: 500px;
 }
 
 body {

@@ -2,7 +2,7 @@
 
 /** @type {import('next').NextConfig} */
 var nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true
 };
 module.exports = nextConfig;

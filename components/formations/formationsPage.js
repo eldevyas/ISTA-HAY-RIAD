@@ -51,9 +51,11 @@ export default function FormationsPage() {
                     ) )}
                 </div> 
                 <div className="ButtonGrid">
+                    <div></div>
                     <Button variant="outlined" className="ReadMore" startIcon={<ReadMoreIcon />}>
                         Afficher Plus
                     </Button>
+                    <div></div>
                 </div>
             </div>
     );
