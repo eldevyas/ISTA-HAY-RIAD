@@ -32,8 +32,6 @@ export async function getServerSideProps() {
 }
 
 export default function HomePage({ Content }) {
-    console.clear();
-    console.log(Content);
 
     return (
         <div>

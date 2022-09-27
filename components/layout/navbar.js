@@ -21,18 +21,15 @@ const buttonLinks = [
 function ActiveButton({ children, href }) {
     const router = useRouter()
 
-    const isCurrentURL = () => {
-        if(router.asPath.startsWith(href)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    const currentLink = router.asPath;
+    const indexOfSlash = currentLink.indexOf('/', 2);
 
-    const currentClass = isCurrentURL ? 'Active' : 'Inactive'  
+    const Link = indexOfSlash === -1 ? currentLink : currentLink.substring(0, indexOfSlash);
+
+    const currentClass = Link === href ? 'Active' : 'Inactive'  
     const handleClick = (e) => {
-        e.preventDefault()
-        router.push(href)
+      e.preventDefault()
+      router.push(href)
     }
   
     return (

@@ -13,12 +13,12 @@ export default function Card(props) {
     }
 
     const goToPost = () => {
-        const href = props.href
-        const title = props.title
+        let href = props.href
+        let OriginalTitle = props.title
+        let title = OriginalTitle.replace(/\s/g , "-");
 
-        router.push(`/actualites/${title}?href=${href}`)
+        router.push(`/actualites/${title}?title=${OriginalTitle}?href=${href}`)
     }
-
 
     return(
         <>
@@ -40,8 +40,7 @@ export default function Card(props) {
                     </div>
 
                     <Stack spacing={2} direction="row">
-                        <Button variant="outlined" className="ButtonSecondary" onClick={goToOriginal}>Lire au Site Originale</Button>
-                        <Button variant="contained" className="ButtonPrimary" startIcon={<ReadMoreIcon/>} onClick={goToPost}>Lire Plus</Button>
+                        <Button variant="contained" className="ButtonPrimary" startIcon={<ReadMoreIcon/>} onClick={goToOriginal}>Lire Plus</Button>
                     </Stack>
                 </div>
             </div>
