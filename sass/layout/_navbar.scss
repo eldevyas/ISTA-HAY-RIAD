@@ -158,7 +158,7 @@
             border-color: #fff;
             color: #fff;
             font-family: inherit;
-            border-radius: 5px;
+            border-radius: 0px;
             border: 1.5px solid rgba(#fff, 0.5) !important;
             &:hover {
                 border: 1.5px solid rgba(#fff, 0.75) !important;
@@ -223,6 +223,7 @@
                 width: 100%;
                 font-family: inherit;
                 transition: all 100ms ease-in-out;
+                border-radius: 0px;
                 border: none !important;
                 &:hover {
                     color: var(--blue);

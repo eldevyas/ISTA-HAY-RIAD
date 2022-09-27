@@ -20,11 +20,19 @@ const buttonLinks = [
 
 function ActiveButton({ children, href }) {
     const router = useRouter()
-    const currentClass = router.asPath === href ? 'Active' : 'Inactive'
-  
+
+    const isCurrentURL = () => {
+        if(router.asPath.startsWith(href)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    const currentClass = isCurrentURL ? 'Active' : 'Inactive'  
     const handleClick = (e) => {
-      e.preventDefault()
-      router.push(href)
+        e.preventDefault()
+        router.push(href)
     }
   
     return (
@@ -99,7 +107,8 @@ function MobileHeader() {
         setIsOpen(!isOpen);
     }
 
-    const closeMenu = () => {
+    const closeMenu = (e) => {
+        e.preventDefault();
         setIsOpen(false);
     }
 
@@ -141,15 +150,15 @@ function MobileHeader() {
                             <div className = "MenuTitle">
                                 <p>Menu</p>
 
-                                <IconButton aria-label="close" title="Close"  onClick={toggleOpen}>
+                                <IconButton aria-label="close" title="Close" onClick={closeMenu}>
                                     <CloseIcon/>
                                 </IconButton>
                             </div>
 
-                            <div className = "MenuLinks">
+                            <div className = "MenuLinks" onClick={closeMenu}>
                             {
                                 buttonLinks.map((link, index) => (
-                                    <ActiveButton key={index} href={link.href} onClick={toggleOpen}>
+                                    <ActiveButton key={index} href={link.href}>
                                         {link.text}
                                     </ActiveButton>
                                 ))

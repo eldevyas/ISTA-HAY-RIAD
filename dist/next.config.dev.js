@@ -1,8 +1,10 @@
 "use strict";
 
 /** @type {import('next').NextConfig} */
-var nextConfig = {
+module.exports = {
   reactStrictMode: false,
-  swcMinify: true
+  images: {
+    domains: ["www.ofppt.ma"],
+    formats: ["image/webp"]
+  }
 };
-module.exports = nextConfig;

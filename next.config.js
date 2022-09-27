@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: false,
-  swcMinify: true,
-}
-
-module.exports = nextConfig
+module.exports = {
+    reactStrictMode: false,
+    images: {
+        domains: ["www.ofppt.ma"],
+        formats: ["image/webp"],
+    },
+};
